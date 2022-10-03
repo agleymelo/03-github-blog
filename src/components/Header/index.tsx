@@ -1,9 +1,11 @@
 import { HeaderContainer } from './styles'
 
+import Logo from '../../assets/Logo.png'
+
 export function Header() {
   return (
     <HeaderContainer>
-      <h1>Header</h1>
+      <img src={Logo} />
     </HeaderContainer>
   )
 }

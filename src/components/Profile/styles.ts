@@ -52,6 +52,11 @@ export const ProfileTitle = styled.div`
     gap: 8px;
 
     color: ${(props) => props.theme.blue};
+    line-height: 0;
+
+    &:hover {
+      border-bottom: 1px solid ${(props) => props.theme.blue};
+    }
   }
 `
 

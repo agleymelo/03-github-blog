@@ -39,7 +39,7 @@ export const InputSearch = styled.input`
   color: ${(props) => props.theme['base-text']};
   border-radius: 6px;
 
-  border: 0;
+  border: 1px solid ${(props) => props.theme['base-border']};
 
   &::placeholder {
     color: ${(props) => props.theme['base-label']};

@@ -1,6 +1,6 @@
-import { BsBoxArrowInUpRight } from 'react-icons/bs'
-import { FaGithub, FaBuilding, FaUserFriends } from 'react-icons/fa'
-import { useTheme } from 'styled-components'
+import { BsBoxArrowInUpRight } from "react-icons/bs";
+import { FaGithub, FaBuilding, FaUserFriends } from "react-icons/fa";
+import { useTheme } from "styled-components";
 
 import {
   ProfileBio,
@@ -8,47 +8,56 @@ import {
   ProfileFooter,
   ProfileTitle,
   Wrapper,
-} from './styles'
+} from "./styles";
 
-export function Profile() {
-  const theme = useTheme()
+type ProfileProps = {
+  login: string;
+  name: string;
+  avatar_url: string;
+  bio: string;
+  followers: number;
+};
+
+export function Profile({
+  login,
+  name,
+  avatar_url,
+  bio,
+  followers,
+}: ProfileProps) {
+  const theme = useTheme();
 
   return (
     <ProfileContainer>
-      <img src="https://avatars.githubusercontent.com/u/49816916?v=4" alt="" />
+      <img src={avatar_url} alt="" />
 
       <Wrapper>
         <ProfileTitle>
-          <h3>Agleylson Melo</h3>
+          <h3>{name}</h3>
 
-          <a href="">
+          <a href="https://github.com/agleymelo" target="_blank">
             GITHUB
             <BsBoxArrowInUpRight size={12} />
           </a>
         </ProfileTitle>
 
-        <ProfileBio>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid
-          laboriosam minima cum quasi! Repellendus, est eos omnis rem nisi atque
-          inventore, ipsa necessitatibus architecto eum tempore quidem vitae
-          quod accusamus!
-        </ProfileBio>
+        <ProfileBio>{bio}</ProfileBio>
 
         <ProfileFooter>
           <span>
-            <FaGithub size={18} color={theme['base-label']} />
-            agleymelo
+            <FaGithub size={18} color={theme["base-label"]} />
+            {login}
           </span>
           <span>
-            <FaBuilding size={18} color={theme['base-label']} />
+            <FaBuilding size={18} color={theme["base-label"]} />
             AGLEY
           </span>
           <span>
-            <FaUserFriends size={18} color={theme['base-label']} />
-            32 seguidores
+            <FaUserFriends size={18} color={theme["base-label"]} />
+            {followers} seguidores
           </span>
         </ProfileFooter>
       </Wrapper>
     </ProfileContainer>
-  )
+  );
 }

@@ -1,6 +1,8 @@
 import { Profile } from '../../components/Profile'
+import { CardList } from './components/CardList'
 import { SearchForm } from './components/SearchForm'
-import { HomeContainer } from './styles'
+
+import { HomeContainer, WrapperCardList } from './styles'
 
 export function Home() {
   return (
@@ -8,6 +10,12 @@ export function Home() {
       <Profile />
 
       <SearchForm />
+
+      <WrapperCardList>
+        <CardList />
+
+        <CardList />
+      </WrapperCardList>
     </HomeContainer>
   )
 }

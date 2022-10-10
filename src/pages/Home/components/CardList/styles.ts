@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const CardListContainer = styled(Link)`
   width: 26rem;
@@ -8,7 +8,7 @@ export const CardListContainer = styled(Link)`
 
   padding: 1rem;
 
-  background: ${(props) => props.theme["base-post"]};
+  background: ${(props) => props.theme['base-post']};
   border-radius: 6px;
 
   text-decoration: none;
@@ -17,7 +17,7 @@ export const CardListContainer = styled(Link)`
     margin-top: 1.25rem;
 
     font-size: 1rem;
-    color: ${(props) => props.theme["base-text"]};
+    color: ${(props) => props.theme['base-text']};
 
     display: block;
     overflow: hidden;
@@ -27,11 +27,11 @@ export const CardListContainer = styled(Link)`
   }
 
   &:hover {
-    border: 2px solid ${(props) => props.theme["base-label"]};
+    border: 2px solid ${(props) => props.theme['base-label']};
   }
 
   border: 2px solid transparent;
-`;
+`
 
 export const CardListHeader = styled.div`
   display: flex;
@@ -45,11 +45,11 @@ export const CardListHeader = styled.div`
 
     font-size: 1.25rem;
     font-weight: bold;
-    color: ${(props) => props.theme["base-title"]};
+    color: ${(props) => props.theme['base-title']};
   }
 
   > time {
     font-size: 0.875rem;
-    color: ${(props) => props.theme["base-span"]};
+    color: ${(props) => props.theme['base-span']};
   }
-`;
+`

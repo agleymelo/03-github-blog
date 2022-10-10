@@ -13,6 +13,8 @@ import {
   PostContainer,
   PostCardHeaderContent,
   PostCardButtonBack,
+  ContainerMarkDown,
+  Markdown,
 } from "./styles";
 
 type Post = {
@@ -54,7 +56,7 @@ export function Post() {
         <PostCardHeaderContent>
           <PostCardButtonBack to="/">Back</PostCardButtonBack>
 
-          <a href={post.html_url} target="_blank">
+          <a href={post.html_url} target="_blank" rel="noreferrer">
             View in Github
             <BsBoxArrowInUpRight size={12} />
           </a>
@@ -80,6 +82,23 @@ export function Post() {
           </span>
         </PostCardFooter>
       </PostCardHeader>
+
+      <ContainerMarkDown>
+        <Markdown
+          children={post.body}
+          components={{
+            code({ node, inline, className, children, ...props }) {
+              return (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        />
+      </ContainerMarkDown>
+
+      {/* <ReackMarkDown children={post.body} /> */}
     </PostContainer>
   );
 }

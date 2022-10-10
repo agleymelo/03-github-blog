@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ReactMarkdown from "react-markdown";
 
 export const PostContainer = styled.div`
   display: flex;
@@ -23,8 +24,6 @@ export const PostCardHeader = styled.div`
 
   background: ${(props) => props.theme["base-profile"]};
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
-
-  border: 1px solid #fff;
 
   padding: 1.5rem;
 `;
@@ -62,4 +61,43 @@ export const PostCardHeaderContent = styled.div`
   }
 `;
 
-export const PostCardFooter = styled.div``;
+export const PostCardFooter = styled.div`
+  margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+  }
+`;
+
+export const ContainerMarkDown = styled.div`
+  margin-top: 2rem;
+
+  & > p {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 160%;
+    color: ${(props) => props.theme["base-text"]};
+  }
+`;
+
+export const Markdown = styled(ReactMarkdown)`
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 160%;
+
+  color: ${(props) => props.theme["base-text"]};
+  code {
+    span {
+      font-family: "Fira Code";
+    }
+  }
+`;

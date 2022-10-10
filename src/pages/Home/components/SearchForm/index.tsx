@@ -1,28 +1,28 @@
-import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { useFormContext } from "react-hook-form";
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
+import { useFormContext } from 'react-hook-form'
 
-import { IssuesContext } from "../../../../contexts/IssuesContext";
-import { useDebouncedValue } from "../../../../hooks/useDebounce";
-import { ContainerSearchForm, InputSearch } from "./styles";
+import { IssuesContext } from '../../../../contexts/IssuesContext'
+import { useDebouncedValue } from '../../../../hooks/useDebounce'
+import { ContainerSearchForm, InputSearch } from './styles'
 
 export function SearchForm() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('')
 
-  const { posts, searchIssues } = useContext(IssuesContext);
+  const { posts, searchIssues } = useContext(IssuesContext)
 
-  const { register } = useFormContext();
+  const { register } = useFormContext()
 
-  const debounce = useDebouncedValue(search);
+  const debounce = useDebouncedValue(search)
 
   async function handleSearchIssues(event: ChangeEvent<HTMLInputElement>) {
-    setSearch(event.target.value);
+    setSearch(event.target.value)
   }
 
-  const countAllPosts = posts.length;
+  const countAllPosts = posts.length
 
   useEffect(() => {
-    searchIssues(debounce);
-  }, [debounce]);
+    searchIssues(debounce)
+  }, [debounce])
 
   return (
     <ContainerSearchForm>
@@ -33,11 +33,11 @@ export function SearchForm() {
       </div>
 
       <InputSearch
-        {...register("query")}
+        {...register('query')}
         type="text"
         placeholder="Search for content"
         onChange={handleSearchIssues}
       />
     </ContainerSearchForm>
-  );
+  )
 }

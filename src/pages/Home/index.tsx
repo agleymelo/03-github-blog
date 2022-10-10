@@ -1,16 +1,16 @@
-import { useContext } from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import { Profile } from "../../components/Profile";
-import { IssuesContext } from "../../contexts/IssuesContext";
-import { CardList } from "./components/CardList";
-import { SearchForm } from "./components/SearchForm";
+import { useContext } from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
+import { Profile } from '../../components/Profile'
+import { IssuesContext } from '../../contexts/IssuesContext'
+import { CardList } from './components/CardList'
+import { SearchForm } from './components/SearchForm'
 
-import { HomeContainer, WrapperCardList } from "./styles";
+import { HomeContainer, WrapperCardList } from './styles'
 
 export function Home() {
-  const { user, posts } = useContext(IssuesContext);
+  const { user, posts } = useContext(IssuesContext)
 
-  const searchIssuesForm = useForm();
+  const searchIssuesForm = useForm()
 
   return (
     <HomeContainer>
@@ -30,6 +30,7 @@ export function Home() {
         {posts.map((post) => (
           <CardList
             key={post.id}
+            number={post.number}
             title={post.title}
             body={post.body}
             created_at={post.created_at}
@@ -37,5 +38,5 @@ export function Home() {
         ))}
       </WrapperCardList>
     </HomeContainer>
-  );
+  )
 }

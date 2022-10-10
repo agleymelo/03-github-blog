@@ -1,6 +1,6 @@
-import { BsBoxArrowInUpRight } from "react-icons/bs";
-import { FaGithub, FaBuilding, FaUserFriends } from "react-icons/fa";
-import { useTheme } from "styled-components";
+import { BsBoxArrowInUpRight } from 'react-icons/bs'
+import { FaGithub, FaBuilding, FaUserFriends } from 'react-icons/fa'
+import { useTheme } from 'styled-components'
 
 import {
   ProfileBio,
@@ -8,15 +8,15 @@ import {
   ProfileFooter,
   ProfileTitle,
   Wrapper,
-} from "./styles";
+} from './styles'
 
 type ProfileProps = {
-  login: string;
-  name: string;
-  avatar_url: string;
-  bio: string;
-  followers: number;
-};
+  login: string
+  name: string
+  avatar_url: string
+  bio: string
+  followers: number
+}
 
 export function Profile({
   login,
@@ -25,7 +25,7 @@ export function Profile({
   bio,
   followers,
 }: ProfileProps) {
-  const theme = useTheme();
+  const theme = useTheme()
 
   return (
     <ProfileContainer>
@@ -35,7 +35,11 @@ export function Profile({
         <ProfileTitle>
           <h3>{name}</h3>
 
-          <a href="https://github.com/agleymelo" target="_blank">
+          <a
+            href="https://github.com/agleymelo"
+            target="_blank"
+            rel="noreferrer"
+          >
             GITHUB
             <BsBoxArrowInUpRight size={12} />
           </a>
@@ -45,19 +49,19 @@ export function Profile({
 
         <ProfileFooter>
           <span>
-            <FaGithub size={18} color={theme["base-label"]} />
+            <FaGithub size={18} color={theme['base-label']} />
             {login}
           </span>
           <span>
-            <FaBuilding size={18} color={theme["base-label"]} />
+            <FaBuilding size={18} color={theme['base-label']} />
             AGLEY
           </span>
           <span>
-            <FaUserFriends size={18} color={theme["base-label"]} />
+            <FaUserFriends size={18} color={theme['base-label']} />
             {followers} seguidores
           </span>
         </ProfileFooter>
       </Wrapper>
     </ProfileContainer>
-  );
+  )
 }

@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
-export const CardListContainer = styled.div`
+export const CardListContainer = styled(Link)`
   width: 26rem;
   height: 16.25rem;
 
@@ -9,6 +11,8 @@ export const CardListContainer = styled.div`
   background: ${(props) => props.theme["base-post"]};
   border-radius: 6px;
 
+  text-decoration: none;
+
   > span {
     margin-top: 1.25rem;
 
@@ -16,7 +20,6 @@ export const CardListContainer = styled.div`
     color: ${(props) => props.theme["base-text"]};
 
     display: block;
-
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 4;

@@ -3,12 +3,13 @@ import { formatDistance } from "date-fns";
 import { CardListContainer, CardListHeader } from "./styles";
 
 type CardListProps = {
+  number: number;
   title: string;
   created_at: string;
   body: string;
 };
 
-export function CardList({ title, created_at, body }: CardListProps) {
+export function CardList({ number, title, created_at, body }: CardListProps) {
   const shortTitle =
     title.length > 38 ? title.substring(0, 38).concat("...") : title;
 
@@ -19,7 +20,7 @@ export function CardList({ title, created_at, body }: CardListProps) {
   const shortBody = markdownAsText?.substring(0, 180).concat("...");
 
   return (
-    <CardListContainer>
+    <CardListContainer to={`/post/${number}`}>
       <CardListHeader>
         <h2>{shortTitle}</h2>
         <time>

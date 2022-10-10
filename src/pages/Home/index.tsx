@@ -30,6 +30,7 @@ export function Home() {
         {posts.map((post) => (
           <CardList
             key={post.id}
+            number={post.number}
             title={post.title}
             body={post.body}
             created_at={post.created_at}

@@ -1,18 +1,35 @@
-import { CardListContainer, CardListHeader } from './styles'
+import { formatDistance } from "date-fns";
 
-export function CardList() {
+import { CardListContainer, CardListHeader } from "./styles";
+
+type CardListProps = {
+  title: string;
+  created_at: string;
+  body: string;
+};
+
+export function CardList({ title, created_at, body }: CardListProps) {
+  const shortTitle =
+    title.length > 38 ? title.substring(0, 38).concat("...") : title;
+
+  const removeSpecialCharacters = /\((.*?)\)|([\u0300-\u036f]|[^0-9-zA-z])/g;
+
+  const markdownAsText = body?.replace(removeSpecialCharacters, " ");
+
+  const shortBody = markdownAsText?.substring(0, 180).concat("...");
+
   return (
     <CardListContainer>
       <CardListHeader>
-        <h2>JavaScript data types and data structures</h2>
-        <time>Ago 1 Day</time>
+        <h2>{shortTitle}</h2>
+        <time>
+          {formatDistance(Date.parse(created_at), new Date(), {
+            addSuffix: true,
+          })}
+        </time>
       </CardListHeader>
 
-      <p>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available...
-      </p>
+      <span>{shortBody}</span>
     </CardListContainer>
-  )
+  );
 }

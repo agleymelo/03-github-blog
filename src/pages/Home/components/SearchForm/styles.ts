@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const ContainerSearchForm = styled.form`
+export const ContainerSearchForm = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -13,19 +13,19 @@ export const ContainerSearchForm = styled.form`
 
     margin-top: 4.5rem;
 
-    h3 {
+    strong {
       font-size: 1.125rem;
       font-weight: bold;
-      color: ${(props) => props.theme['base-subtitle']};
+      color: ${(props) => props.theme["base-subtitle"]};
     }
 
     span {
       font-size: 0.875rem;
 
-      color: ${(props) => props.theme['base-span']};
+      color: ${(props) => props.theme["base-span"]};
     }
   }
-`
+`;
 
 export const InputSearch = styled.input`
   margin-top: 0.75rem;
@@ -35,14 +35,14 @@ export const InputSearch = styled.input`
 
   padding: 0.75rem 1rem;
 
-  background: ${(props) => props.theme['base-input']};
-  color: ${(props) => props.theme['base-text']};
+  background: ${(props) => props.theme["base-input"]};
+  color: ${(props) => props.theme["base-text"]};
   border-radius: 6px;
 
-  border: 1px solid ${(props) => props.theme['base-border']};
+  border: 1px solid ${(props) => props.theme["base-border"]};
 
   &::placeholder {
-    color: ${(props) => props.theme['base-label']};
+    color: ${(props) => props.theme["base-label"]};
     font-weight: regular;
   }
-`
+`;
